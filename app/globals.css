@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Media query for screens smaller than 768px */
+.container {
+  margin: 5rem;
+}
+
+.card-data {
+  height: 70vh;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 5px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 5px 2px 2px 2px grey;
+}
+.card-data-10{
+
+  height: 40vh;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 5px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 5px 2px 2px 2px grey;
+}
+.card-data-20{
+  height: 40vh;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 5px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 5px 2px 2px 2px grey;
+
+}
+.card-data-links{
+  height: auto;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 5px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 5px 2px 2px 2px grey;
+  color: blue;
+  
+}
+
+.links-container {
+}
+
+@media (max-width: 756px) {
+  .card-data-links{
+    height: auto;
+    padding: 1rem;
+    background-color: white;
+    margin-top: 20px;
+   
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 5px 6px rgba(1, 1, 1, 0.1); /* Updated box shadow */
+    
+  }
+  .link-content {
+    /* Class for container element */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .container {
+    margin: 0;
+  }
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .card-data {
+    height: 70vh;
+    padding: 1rem;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 0;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 5px 6px rgba(1, 1, 1, 0.1); /* Updated box shadow */
+}.card-data-10{
+  height: 70vh;
+  padding: 1rem;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 0;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 5px 6px rgba(1, 1, 1, 0.1); /* Updated box shadow */
+}
+.card-data-20 {
+  height: 70vh;
+  padding: 1rem;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 0;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 5px 6px rgba(1, 1, 1, 0.1); /* Updated box shadow */
+}
+
+
+}
+
+.content {
+  flex: 1;
+  margin: 5rem 10rem;
+}
+
+.links {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+.roleBanner {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.roleTitle {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.roleSubtitle {
+  font-size: 1.5em;
+}
+
+.responsibilities {
+  background-color: linear-gradient(to right, #0044b3, #0066ff);
+  /* color: #fff; */
+  color: black;
+  border-radius: 0.6rem;
+}
+.background {
+  background-color: "1DA8FF !important";
+}
