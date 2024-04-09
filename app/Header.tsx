@@ -33,7 +33,7 @@ const Header = () => {
             <span className="sr-only">Your Company</span>
             {/* <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" /> */}
 
-            <Link   style={{color:"green"}}  href="/" className="link link-hover">JOB HUNTING</Link>
+            <Link   style={{color:"green"}}  href="/home" className="link link-hover">JOB HUNTING</Link>
             <h1>  </h1>
           </a>
         </div>
@@ -99,15 +99,15 @@ const Header = () => {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a target="_blank" href="https://www.foundit.in/seeker/registration?spl=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24&utm_source=Opicle&utm_medium=affiliate&utm_campaign=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24" className="text-sm font-semibold leading-6 text-gray-900">
             Work from Home
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link href="/home" className="text-sm font-semibold leading-6 text-gray-900">
             Off campus Drive
-          </a>
+          </Link >
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">

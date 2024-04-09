@@ -8,7 +8,7 @@ import Footer from "./Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Job Huntings",
+  title: "Jog Hunting",
   description: "job huting for Freshers",
 };
 

@@ -27,7 +27,7 @@ export default function Home() {
   }, []); // Empty dependency array ensures useEffect runs only once on component mount
 
   return (
-    <main data-theme="light">
+    <main  style={{backgroundColor:'#F7F8F9'}} >
       {/* Header */}
     
 
