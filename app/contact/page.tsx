@@ -1,16 +1,29 @@
-import Link from "next/link";
+'use client'
+import { useEffect, useState } from 'react';
 
-const Footer = () => {
+export default function Contact() {
+  const [showEmail, setShowEmail] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowEmail(true);
+    }, 1000); 
+  }, []);
+
   return (
-    <>
-      <footer  className="footer footer-center p-10 bg-base-200 text-base-content rounded footer-postion" data-theme="light">
-        <nav className="grid grid-flow-col gap-4">
-          <Link   href="/about" className="link link-hover">About us</Link>
-          <a className="link link-hover">Contact</a>
-          <Link  href="/home" className="link link-hover">Jobs</Link>
-        
-        </nav>
-        <nav>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', minHeight: '80vh', }}>
+      <div className="mockup-phone" style={{ width: '400px' ,position: 'relative', marginTop: 'calc(120px)'}}>
+        <div>
+          <div className="camera" ></div>
+
+          <div className="display" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className={`artboard artboard-demo phone-1 ${showEmail ? 'show' : 'hide'}`}>Hi.
+              <span  className={` artboard-demo phone-1 ${showEmail ? 'show' : 'hide'}`}>  
+              {showEmail && <div className="email">Email : developnators@gmail.com</div>}</span>
+
+
+            </div>
+            <nav style={{marginTop:'-20px' ,zIndex:'200'}}>
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg
@@ -47,12 +60,12 @@ const Footer = () => {
             </a>
           </div>
         </nav>
-        <aside>
-          <p>Copyright © 2024 - All right reserved by Developnators</p>
-        </aside>
-      </footer>
-    </>
+            
+            {/* icons */}
+          
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default Footer;
+}

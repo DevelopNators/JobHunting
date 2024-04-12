@@ -6,7 +6,7 @@ interface PropInterface {
 
 const PlaceHolder: React.FC<PropInterface> = ({ text }) => {
     // Log the text to ensure it's passed correctly
-    console.log(text);
+   
 
     return (
         <div className="mt-10 p-2" style={{ background: 'linear-gradient(to right, #0044b3, #0066ff)', borderRadius: '0.6rem' }}>

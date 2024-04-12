@@ -1,40 +1,43 @@
 'use client'
-import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import { ArrowPathIcon, Bars3Icon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon, XMarkIcon, } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import Link from 'next/link'
+// 'use client'
+import { Fragment, useState } from 'react';
+import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
+import { ArrowPathIcon, Bars3Icon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon, XMarkIcon, ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
+import { VscFeedback } from "react-icons/vsc";
+import Model from '../components/Model/model';
+// import Model from '../components/Model/model';
+// import Model from '../components/Model/model';
 const products: any[] = [
   { name: 'Internship', description: 'Get Training ', href: '#', icon: ChartPieIcon },
   { name: 'Partime', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
   { name: 'Full Time', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Trainne', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
- 
-]
+  { name: 'Trainee', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+];
 
-const callsToAction:any [] = [
-  // { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  // { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+const callsToAction: any[] = [];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [show, setShow] = useState(false)
+  const handleModel = () =>{
+      setShow(!show)
+  }
+
+  console.log(show)
 
   return (
-    <header className="bg-white">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className="bg-white fixed w-full mb-10 z-50">
+      <nav className="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            {/* <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" /> */}
-
-            <Link   style={{color:"green"}}  href="/home" className="link link-hover">JOB HUNTING</Link>
-            <h1>  </h1>
+            <Link href="/" className="link link-hover">JOB HUNTING</Link>
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -53,7 +56,6 @@ const Header = () => {
               Jobs
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
-
             <Transition
               as={Fragment}
               enter="transition ease-out duration-200"
@@ -103,15 +105,14 @@ const Header = () => {
             Work from Home
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            
           </a>
-          <Link href="/home" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link href="/" className="text-sm font-semibold leading-6 text-gray-900">
             Off campus Drive
           </Link >
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Intership <span aria-hidden="true">&rarr;</span>
+            Internship <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -121,15 +122,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              {/* <img
-                className="h-8 w-auto"
-                // src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                // alt=""
-                
-
-              /> */}
-
-<h1 style={{color:"green"}}>  JOB HUNTING</h1>
+              <h1 style={{color:"green"}}>  JOB HUNTING</h1>
             </a>
             <button
               type="button"
@@ -168,39 +161,45 @@ const Header = () => {
                     </>
                   )}
                 </Disclosure>
-                {/* <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </a> */}
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Work From Home
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Off campus Drive
-                </a>
+                <a target="_blank" href="https://www.foundit.in/seeker/registration?spl=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24&utm_source=Opicle&utm_medium=affiliate&utm_campaign=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24" className="text-sm font-semibold leading-6 text-gray-900">
+                   <p style={{marginBottom:'20px', marginTop:'20px'}}> Work from Home </p> 
+                  </a>
+                    <Link href="/home" className="text-sm font-semibold leading-6 text-gray-900">
+                Off campus Drive
+              </Link >
               </div>
               <div className="py-6">
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Log in
+                   Internship <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
             </div>
           </div>
         </Dialog.Panel>
       </Dialog>
+      
+      {/* Feedback button */}
+      <button
+        type="button"
+        onClick={() => {handleModel()
+        }}>
+        <div className="tooltip fixed bottom-24 right-8 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600" data-tip="Feedback" style={{backgroundColor:'none' , border:'none'}}  >
+         <VscFeedback   />
+        </div>
+      </button>
+      <Model show={show} setShowModel = {handleModel} />
+
+      
+      
+         
+         
     </header>
-  )
+  );
 };
 
+
 export default Header;
+
