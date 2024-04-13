@@ -183,7 +183,13 @@ const Header = ({ params }: { params: { slug: string } }) => {
                       as="a"
                       href={item.href}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      onClick={() => setMobileMenuOpen(false)} 
+                      onClick={(e) => {
+                        setMobileMenuOpen(false);
+                        handleCategory(e, item.id);
+                      }}
+                      
+                     
+
                     >
                       {item.categoryName}
                     </Disclosure.Button>
@@ -195,7 +201,7 @@ const Header = ({ params }: { params: { slug: string } }) => {
           <a target="_blank" href="https://www.foundit.in/seeker/registration?spl=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24&utm_source=Opicle&utm_medium=affiliate&utm_campaign=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24" className="text-sm font-semibold leading-6 text-gray-900">
             <p style={{ marginBottom: '20px', marginTop: '20px' }}> Work from Home </p>
           </a>
-          <Link href="/home" className="text-sm font-semibold leading-6 text-gray-900" onClick={() => setMobileMenuOpen(false)}> {/* Close menu when item is clicked */}
+          <Link href="/" className="text-sm font-semibold leading-6 text-gray-900" onClick={() => setMobileMenuOpen(false)}> 
             Off campus Drive
           </Link>
         </div>
@@ -203,7 +209,7 @@ const Header = ({ params }: { params: { slug: string } }) => {
           <a
             href="#"
             className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            onClick={() => setMobileMenuOpen(false)} // Close menu when item is clicked
+            onClick={() => setMobileMenuOpen(false)} 
           >
             Internship <span aria-hidden="true">&rarr;</span>
           </a>
@@ -223,11 +229,6 @@ const Header = ({ params }: { params: { slug: string } }) => {
         </div>
       </button>
       <Model show={show} setShowModel = {handleModel} />
-
-      
-      
-         
-         
     </header>
   );
 };

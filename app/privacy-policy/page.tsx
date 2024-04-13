@@ -6,11 +6,11 @@ const PrivacyPolicy = () =>{
             <div className="term-container" >
 
 
-            <div className="term-services mt-6" style= {{ position: 'relative', marginTop: 'calc(120px)'}} >
+            <div className="term-services mt-6" style= {{ position: 'relative', marginTop: 'calc(130px)'}} >
             <h1>Privacy Policy </h1>
 
             </div>
-            <div className="home-linkStyle">
+            <div className="home-linkStyle" style={{position: 'relative', marginTop: 'calc(90px)'}}>
             <Links />
             </div>
 
