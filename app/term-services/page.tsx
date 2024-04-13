@@ -2,9 +2,9 @@ import Links from "../components/links/links";
 
 const TermAndService = () => {
   return (
-    <div  data-theme="light">
+    <div  data-theme="light"  >
       <div className="term-container" style={{ display: "flex", width: "100%", height:'auto', justifyContent: "center" }}>
-      <div className="term-services mt-6"  >
+      <div className="term-services mt-6" style= {{ position: 'relative', marginTop: 'calc(120px)'}}  >
       <h1  style={{ textAlign: "center", fontSize: "2.5rem", fontWeight: "bold" }}>OUR TERM AND SERVICES</h1>
           <h2>Disclaimer</h2>
           <p>
