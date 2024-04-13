@@ -44,10 +44,10 @@ const Header = ({ params }: { params: { slug: string } }) => {
    
 
     e.preventDefault();
-    console.log("before ",)
+    // console.log("before ",)
     dispatch({ type: 'CAT_ID', payload: id })
    
-    console.log("pathname", pathname)
+    // console.log("pathname", pathname)
     if (pathname !== '/'){
       router.push('/')
     }
