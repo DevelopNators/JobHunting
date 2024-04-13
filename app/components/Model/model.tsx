@@ -16,9 +16,9 @@ const Model: React.FC<ModelProps> =   ({ show, setShowModel }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
    
-    console.log('Email:', email);
-    console.log('Name:', name);
-    console.log('Feedback:', feedback);
+    // console.log('Email:', email);
+    // console.log('Name:', name);
+    // console.log('Feedback:', feedback);
     
     handleClose();
   };

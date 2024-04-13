@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
-
+import { GlobalStateProvider } from './context/GLobalContext';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,9 +23,11 @@ export default function RootLayout({
       
 
       </head>
+       
       <body className={inter.className}>
+      <GlobalStateProvider>
         <Header /> 
-        
+        </GlobalStateProvider>
 
         <main  style={{backgroundColor:'#F7F8F9'}}>{children}</main>
         <Footer  /> 

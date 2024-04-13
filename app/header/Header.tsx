@@ -1,19 +1,25 @@
 'use client'
 // 'use client'
+
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import { ArrowPathIcon, Bars3Icon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon, XMarkIcon, ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/24/outline';
+import { ArrowPathIcon, Bars3Icon, ChartPieIcon,
+  CursorArrowRaysIcon, 
+  FingerPrintIcon, SquaresPlusIcon, XMarkIcon, ChevronDownIcon, PhoneIcon, PlayCircleIcon 
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { useGlobalState } from '../context/GLobalContext';
 
 import { VscFeedback } from "react-icons/vsc";
 import Model from '../components/Model/model';
-// import Model from '../components/Model/model';
-// import Model from '../components/Model/model';
+
 const products: any[] = [
-  { name: 'Internship', description: 'Get Training ', href: '#', icon: ChartPieIcon },
-  { name: 'Partime', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Full Time', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Trainee', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+  { icon: ChartPieIcon },
+  {  icon: CursorArrowRaysIcon },
+  {  icon: FingerPrintIcon },
+  {  icon: SquaresPlusIcon },
 ];
 
 const callsToAction: any[] = [];
@@ -22,14 +28,32 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-const Header = () => {
+const Header = ({ params }: { params: { slug: string } }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [show, setShow] = useState(false)
+  const { state, dispatch } = useGlobalState();
+
+  const router = useRouter()
+  
+  const pathname = usePathname()
+ 
   const handleModel = () =>{
       setShow(!show)
   }
+  const handleCategory = (e:any, id:any) => {
+   
 
-  console.log(show)
+    e.preventDefault();
+    console.log("before ",)
+    dispatch({ type: 'CAT_ID', payload: id })
+   
+    console.log("pathname", pathname)
+    if (pathname !== '/'){
+      router.push('/')
+    }
+
+};
+  
 
   return (
     <header className="bg-white fixed w-full mb-10 z-50">
@@ -67,23 +91,29 @@ const Header = () => {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {products.map((item) => (
+                {state.data.map((item:any) => (
+                  
                     <div
-                      key={item.name}
+                      key={item.id}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                     >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
-                      </div>
+                      {/* {item.icon && ( 
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                          <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                        </div>
+                      )} */}
                       <div className="flex-auto">
-                        <a href={item.href} className="block font-semibold text-gray-900">
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
+                       
+                        
+                        <button onClick={(e) => handleCategory(e, item.id)} className="mt-1 text-gray-600" style={{color:'black'}}>
+                            {item?.categoryName}
+                        </button>                       
+                        
                       </div>
                     </div>
                   ))}
+
+
                 </div>
                 <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                   {callsToAction.map((item) => (
@@ -147,15 +177,15 @@ const Header = () => {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="mt-2 space-y-2">
-                  {[...products, ...callsToAction].map((item) => (
+                  {[...state.data, ...callsToAction].map((item) => (
                     <Disclosure.Button
-                      key={item.name}
+                      key={item.id}
                       as="a"
                       href={item.href}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       onClick={() => setMobileMenuOpen(false)} 
                     >
-                      {item.name}
+                      {item.categoryName}
                     </Disclosure.Button>
                   ))}
                 </Disclosure.Panel>

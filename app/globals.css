@@ -222,8 +222,8 @@
   border-radius: 8px;
   color: black;
   max-height: 100vh;
-  min-height: 50vh; /* You can adjust the minimum height as needed */
-  overflow-y: auto; /* Adding scroll if content exceeds max height */
+  min-height: 50vh; 
+  overflow-y: auto; 
 }
 
 .term-container{

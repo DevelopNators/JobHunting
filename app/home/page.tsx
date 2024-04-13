@@ -4,16 +4,20 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Links from "../components/links/links";
 import Link from "next/link";
+import { useGlobalState } from '../context/GLobalContext';
 
 const HomePage = () => {
-  // State to track the current page and page size
+  
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10); 
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [totalJobs, setTotalJobs] = useState(1);
+  const { state } = useGlobalState();
+  const categoryId = state.categoryId;
+  
 
- 
+console.log("from home page ", categoryId);
 
   const getAllJobs = async () => {
     try {
@@ -24,8 +28,31 @@ const HomePage = () => {
         throw new Error("Failed to fetch jobs");
       }
       const data = await response.json();
+      
       setJobs(data.jobs);
       
+     
+      setTotalJobs(data.totalRecords);
+      
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
+    }
+  };
+
+  const getAllJobsbyCategoryId = async () => {
+    try {
+      const response = await fetch(
+        `https://developnators.azurewebsites.net/api/JobHunting/GetAllJobsWeb?CategoryId=${categoryId}&IsActive=true&pageNumber=${currentPage}&pageSize=${pageSize}`
+      );
+      if (!response.ok) {
+        throw new Error("Failed to fetch jobs");
+      }
+      const data = await response.json();
+      
+      setJobs(data.jobs);
+      
+     
       setTotalJobs(data.totalRecords);
       
       setLoading(false);
@@ -35,9 +62,13 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    getAllJobs();
-  }, [currentPage, pageSize]); 
-
+    if (categoryId) {
+      getAllJobsbyCategoryId();
+    } else {
+      getAllJobs();
+    }
+  }, [currentPage, pageSize, categoryId]);
+  
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
   };
@@ -51,7 +82,7 @@ const HomePage = () => {
     setCurrentPage(1); 
   };
   const totalPages = Math.ceil(totalJobs / pageSize);
-  console.log(totalPages)
+  // console.log(totalPages)
 
   return (
     <div style={{ backgroundColor: "#F7F8F9" ,}}>

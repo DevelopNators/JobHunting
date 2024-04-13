@@ -13,7 +13,7 @@ const Links = () => {
         "https://developnators.azurewebsites.net/api/JobHunting/GetAllJobs"
       );
       const response = await data.json();
-      console.log(response);
+      // console.log(response);
       setLinks(response);
     } catch (error) {
       console.error("Error fetching links:", error);

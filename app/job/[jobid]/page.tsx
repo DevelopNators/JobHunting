@@ -31,7 +31,7 @@ const Jobs = ({params}: {
       const data = await response.json();
       setSingleJob(data);
       setLoading(false); 
-      console.log("data",data )
+      // console.log("data",data )
 
     } catch (error) {
       console.error('Error fetching job:', error);
