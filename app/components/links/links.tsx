@@ -10,11 +10,10 @@ const Links = () => {
   const getAllLinks = async () => {
     try {
       const data = await fetch(
-        "https://developnators.azurewebsites.net/api/JobHunting/GetAllJobs"
+        " https://developnators.azurewebsites.net/api/JobHunting/GetAllJobsWeb?&IsActive=true&&pageSize=100"
       );
       const response = await data.json();
-      // console.log(response);
-      setLinks(response);
+      setLinks(response.jobs);
     } catch (error) {
       console.error("Error fetching links:", error);
     }

@@ -41,13 +41,8 @@ const Header = ({ params }: { params: { slug: string } }) => {
       setShow(!show)
   }
   const handleCategory = (e:any, id:any) => {
-   
-
     e.preventDefault();
-    // console.log("before ",)
     dispatch({ type: 'CAT_ID', payload: id })
-   
-    // console.log("pathname", pathname)
     if (pathname !== '/'){
       router.push('/')
     }
