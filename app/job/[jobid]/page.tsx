@@ -171,6 +171,8 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
             width: "100%",
           }}
         >
+
+
          
           <span
             style={{ width: "80px" }}
