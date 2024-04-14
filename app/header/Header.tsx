@@ -181,7 +181,7 @@ const Header = () => {
             className="flex items-center justify-between"
             style={{ position: "relative", marginTop: "calc(120px)" }}
           >
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <h1 style={{ color: "green" }}>JOB HUNTING</h1>
             </a>
