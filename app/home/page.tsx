@@ -107,10 +107,9 @@ const HomePage = () => {
          width:'100%'
        }}
      >
-       <span className="loading loading-spinner loading-xs"></span>
-       <span className="loading loading-spinner loading-sm"></span>
-       <span className="loading loading-spinner loading-md"></span>
-       <span className="loading loading-spinner loading-lg"></span>
+          
+    <span  style={{width:"60px"}} className="loading loading-spinner loading-lg"></span>
+       <span style={{width:"80px"}} className="loading loading-spinner loading-lg"></span>
      </div>
       ) : (
         <div style={{ backgroundColor: "#F7F8F9" }}>
