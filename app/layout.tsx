@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import { GlobalStateProvider } from './context/GLobalContext';
+import HomePage from "./home/page";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
        
       <body className={inter.className}>
       <GlobalStateProvider>
-        <Header /> 
+        <Header  /> 
         </GlobalStateProvider>
 
         <main  style={{backgroundColor:'#F7F8F9'}}>{children}</main>

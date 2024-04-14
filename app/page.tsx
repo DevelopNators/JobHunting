@@ -14,7 +14,7 @@ export default function Home() {
     <main  style={{backgroundColor:'#F7F8F9'}} >
       <GlobalStateProvider>
       <Header /> 
-      <HomePage/>
+       <HomePage/>
       </GlobalStateProvider>
     </main>
   );

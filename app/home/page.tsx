@@ -13,11 +13,17 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [totalJobs, setTotalJobs] = useState(1);
-  const { state } = useGlobalState();
-  const categoryId = state.categoryId;
+  var catid:any =null
+  try{
+     var { catid } = useGlobalState();
+
+  }
+  catch(err){
+     console.log("errr")
+  }
+  
   
 
-console.log("from home page ", categoryId);
 
   const getAllJobs = async () => {
     try {
@@ -43,7 +49,7 @@ console.log("from home page ", categoryId);
   const getAllJobsbyCategoryId = async () => {
     try {
       const response = await fetch(
-        `https://developnators.azurewebsites.net/api/JobHunting/GetAllJobsWeb?CategoryId=${categoryId}&IsActive=true&pageNumber=${currentPage}&pageSize=${pageSize}`
+        `https://developnators.azurewebsites.net/api/JobHunting/GetAllJobsWeb?CategoryId=${catid}&IsActive=true&pageNumber=${currentPage}&pageSize=${pageSize}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch jobs");
@@ -62,12 +68,12 @@ console.log("from home page ", categoryId);
   };
 
   useEffect(() => {
-    if (categoryId) {
+    if (catid) {
       getAllJobsbyCategoryId();
     } else {
       getAllJobs();
     }
-  }, [currentPage, pageSize, categoryId]);
+  }, [currentPage, pageSize, catid]);
   
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);

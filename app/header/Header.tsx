@@ -1,8 +1,7 @@
 'use client'
 // 'use client'
 
-import { useRouter } from 'next/navigation'
-import { usePathname } from 'next/navigation'
+
 import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { ArrowPathIcon, Bars3Icon, ChartPieIcon,
@@ -28,14 +27,11 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-const Header = ({ params }: { params: { slug: string } }) => {
+const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [show, setShow] = useState(false)
-  const { state, dispatch } = useGlobalState();
+  const { state, dispatch ,setCategoryId} = useGlobalState();
 
-  const router = useRouter()
-  
-  const pathname = usePathname()
  
   const handleModel = () =>{
       setShow(!show)
@@ -43,10 +39,8 @@ const Header = ({ params }: { params: { slug: string } }) => {
   const handleCategory = (e:any, id:any) => {
     e.preventDefault();
     dispatch({ type: 'CAT_ID', payload: id })
-    if (pathname !== '/'){
-      router.push('/')
-    }
-
+    setCategoryId(id);
+    
 };
   
 
@@ -100,7 +94,7 @@ const Header = ({ params }: { params: { slug: string } }) => {
                       <div className="flex-auto">
                        
                         
-                        <button onClick={(e) => handleCategory(e, item.id)} className="mt-1 text-gray-600" style={{color:'black'}}>
+                        <button onClick={(e) =>   setCategoryId(item.id)} className="mt-1 text-gray-600" style={{color:'black'}}>
                             {item?.categoryName}
                         </button>                       
                         

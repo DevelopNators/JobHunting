@@ -1,31 +1,44 @@
 'use client'
 import React, { createContext, useReducer, useContext, useEffect, useState } from 'react';
-
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 const initialState = {
   data: [],
-  categoryId: undefined 
+  categoryId: null 
 };
+
+
 
 const GlobalStateContext = createContext();
 
 export const GlobalStateProvider = ({ children }) => {
 
+  const router = useRouter()
+  
+const pathname = usePathname()
 
   const reducer = (state, action) => {
     switch (action.type) {
       case 'SET_DATA':
         console.log("enter in set data")
         return { ...state, data: action.payload };
-       case 'CAT_ID':
-        console.log("enter in Cat Id" , action.payload)
-        return {...state,  categoryId:  action.payload}
+
       default:
         return state;
     }
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
+  const  [catid, setCatId] =  useState(null)
 
+  const setCategoryId = (id) =>{
+
+    setCatId(id)
+    if (pathname !== '/'){
+      router.push('/')
+    }
+   
+  }
 
   useEffect(() => {
     
@@ -48,7 +61,7 @@ export const GlobalStateProvider = ({ children }) => {
  
 
   return (
-    <GlobalStateContext.Provider value={{ state, dispatch   }}>
+    <GlobalStateContext.Provider value={{ state, dispatch ,setCategoryId ,catid }}>
       {children}
     </GlobalStateContext.Provider>
   );
