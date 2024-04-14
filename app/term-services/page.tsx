@@ -1,8 +1,24 @@
+import Script from "next/script";
 import Links from "../components/links/links";
 
 const TermAndService = () => {
+  let measurementId ='G-64SHT6GEGF'
+
   return (
     <div  data-theme="light"   >
+
+<Script   strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+    {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${measurementId}');
+    `}
+</Script>
+
+      
+      
       <div className="term-container" style={{ display: "flex", width: "100%", height:'auto', justifyContent: "center" }}>
       <div className="term-services mt-6" style= {{ position: 'relative', marginTop: 'calc(120px)'}}  >
       <h1  style={{ textAlign: "center", fontSize: "2.5rem", fontWeight: "bold" }}>OUR TERM AND SERVICES</h1>

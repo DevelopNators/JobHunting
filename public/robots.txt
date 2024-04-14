@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://jobhuntings.developnators.com/
+
+# Sitemaps
+Sitemap: https://jobhuntings.developnators.com/sitemap.xml

@@ -64,7 +64,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    if (catid) {
+    if (catid!==7) {
       getAllJobsbyCategoryId();
     } else {
       getAllJobs();

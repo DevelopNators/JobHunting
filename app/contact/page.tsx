@@ -1,15 +1,17 @@
 "use client";
 import { socialLinks } from "@/public/data";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { FaTelegram, FaWhatsapp, FaLinkedin,FaInstagram ,FaYoutube,FaYoutubeSquare} from "react-icons/fa";
 export default function Contact() {
   const [showEmail, setShowEmail] = useState(false);
-
+  let measurementId ='G-64SHT6GEGF'
   useEffect(() => {
     setTimeout(() => {
       setShowEmail(true);
     }, 1000);
   }, []);
+  
 
   return (
     <div
@@ -114,6 +116,20 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+     
+  
+      <Script   strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+    {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${measurementId}');
+    `}
+</Script>
+      
     </div>
+
   );
 }

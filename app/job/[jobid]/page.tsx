@@ -12,6 +12,7 @@ import SkillRequirement from "@/app/components/jobcomponents/SkillRequirement";
 import Designation from "@/app/components/jobcomponents/Designation";
 import HowToApply from "@/app/components/jobcomponents/HowtoApply";
 import ApplyLink from "@/app/components/jobcomponents/ApplyLink";
+import Script from "next/script";
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   month: "short",
@@ -80,9 +81,19 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
       window.removeEventListener("resize", checkWindowWidth);
     };
   }, []);
+  let measurementId ='G-64SHT6GEGF'
 
   return (
     <div>
+         <Script   strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+    {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${measurementId}');
+    `}
+</Script>
       {loading ? (
         <div
           style={{
@@ -232,6 +243,9 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
           `}</style>
         </div>
       )}
+      
+   
+      
     </div>
   );
 };

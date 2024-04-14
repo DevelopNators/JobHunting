@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+
 const initialState = {
   data: [],
   categoryId: null,

@@ -1,8 +1,19 @@
+import Script from "next/script";
 import Links from "../components/links/links";
 
 const PrivacyPolicy = () => {
+  let measurementId ='G-64SHT6GEGF'
   return (
     <div data-theme="light">
+       <Script   strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+    {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${measurementId}');
+    `}
+</Script>
       <div className="term-container">
         <div
           className="term-services mt-6"
