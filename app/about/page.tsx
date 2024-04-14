@@ -13,8 +13,8 @@ export default function About() {
         description: 'About Us',
         images: [
             {
-                url: 'https://jobhuntings.developnators.com/',
-                alt: 'about Image',
+                url: 'https://jobhuntings.developnators.com/about',
+                alt: 'about page',
             },
         ],
     }}

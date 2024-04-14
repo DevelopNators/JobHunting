@@ -138,8 +138,8 @@ export default function Contact() {
         description: 'contact from here',
         images: [
             {
-                url: 'https://jobhuntings.developnators.com/',
-                alt: 'contack  Image',
+                url: 'https://jobhuntings.developnators.com/contack',
+                alt: 'contact  page',
             },
         ],
     }}

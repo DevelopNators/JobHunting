@@ -23,8 +23,8 @@ const PrivacyPolicy = () => {
         description: 'our privacy policy',
         images: [
             {
-                url: 'https://jobhuntings.developnators.com/',
-                alt: 'privacy Image',
+                url: 'https://jobhuntings.developnators.com/privacy-policy',
+                alt: 'privacy policy',
             },
         ],
     }}

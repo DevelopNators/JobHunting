@@ -25,7 +25,7 @@ const TermAndService = () => {
         description: 'term andd services',
         images: [
             {
-                url: 'https://jobhuntings.developnators.com/',
+                url: 'https://jobhuntings.developnators.com/term-services',
                 alt: 'term and  services',
             },
         ],
