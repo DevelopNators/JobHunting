@@ -4,6 +4,7 @@ import Head from "next/head";
 import Links from "../components/links/links";
 import Link from "next/link";
 import { useGlobalState } from "../context/GLobalContext";
+import { NextSeo } from 'next-seo';
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   month: "short",
@@ -96,6 +97,73 @@ const HomePage = () => {
 
   return (
     <div style={{ backgroundColor: "#F7F8F9" }}>
+      <NextSeo
+    title="Home Page"
+    description="Display all jobs here"
+    openGraph={{
+        title: 'Home Page',
+        description: 'Display all jobs here',
+        images: [
+            {
+                url: 'https://jobhuntings.developnators.com/',
+                alt: 'Homepage Image',
+            },
+        ],
+    }}
+    additionalMetaTags={[
+        {
+            name: 'keywords',
+            content: 'jobs, employment, career',
+        },
+        {
+            name: 'robots',
+            content: 'index,follow',
+        },
+        {
+            name: 'author',
+            content: 'Your Name or Company Name',
+        },
+        {
+            name: 'language',
+            content: 'English',
+        },
+        {
+            name: 'revisit-after',
+            content: '7 days',
+        },
+        {
+            name: 'rating',
+            content: 'general',
+        },
+        {
+            name: 'distribution',
+            content: 'global',
+        },
+        {
+            name: 'geo.region',
+            content: 'US-NY', // Example: United States, New York
+        },
+        {
+            name: 'geo.placename',
+            content: 'New York', // Example: New York
+        },
+        {
+            name: 'geo.position',
+            content: '40.7128;-74.0060', // Example: Latitude and Longitude
+        },
+        {
+            name: 'ICBM',
+            content: '40.7128, -74.0060', // Example: Latitude and Longitude
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ]}
+/>
+
+
+
       {loading ? (
         <div
           style={{
