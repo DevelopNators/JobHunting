@@ -47,6 +47,7 @@ const HomePage = () => {
   };
 
   const getAllJobsbyCategoryId = async () => {
+    setLoading(true)
     try {
       const response = await fetch(
         `https://developnators.azurewebsites.net/api/JobHunting/GetAllJobsWeb?CategoryId=${catid}&IsActive=true&pageNumber=${currentPage}&pageSize=${pageSize}`
@@ -93,15 +94,21 @@ const HomePage = () => {
   return (
     <div style={{ backgroundColor: "#F7F8F9" ,}}>
       {loading ? (
-        <div className="skeleton-loading">
-          <div className="flex skeleton-loading-card ">
-            <div className="flex flex-col gap-4"></div>
-            <div
-              className="skeleton h-32 w-full"
-              style={{ height: "40vh" }}
-            ></div>
-          </div>
-        </div>
+       <div
+       style={{
+         display: 'flex',
+         flexDirection: 'row',
+         justifyContent: 'center',
+         alignItems: 'center',
+         height: '100vh',
+         width:'100%'
+       }}
+     >
+       <span className="loading loading-spinner loading-xs"></span>
+       <span className="loading loading-spinner loading-sm"></span>
+       <span className="loading loading-spinner loading-md"></span>
+       <span className="loading loading-spinner loading-lg"></span>
+     </div>
       ) : (
         <div style={{ backgroundColor: "#F7F8F9" }}>
       <p style={{ textAlign: "center", color: "red", fontSize: "1.6rem", position: 'relative', top: "calc(100px + 2rem)" }}>
