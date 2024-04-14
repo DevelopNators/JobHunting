@@ -1,6 +1,7 @@
 import { socialLinks } from "@/public/data";
 import Link from "next/link";
 import { FaTelegram, FaWhatsapp, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -55,6 +56,9 @@ const Footer = () => {
             </a>
             <a href={socialLinks[3].url} className="text-3xl" target="_blank">
               <FaLinkedin />
+            </a>
+            <a href={socialLinks[4].url} className="text-3xl" target="_blank">
+              <FaInstagram />
             </a>
             {/* <a>
               <svg

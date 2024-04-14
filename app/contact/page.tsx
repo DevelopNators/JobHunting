@@ -1,7 +1,7 @@
 "use client";
 import { socialLinks } from "@/public/data";
 import { useEffect, useState } from "react";
-import { FaTelegram, FaWhatsapp, FaLinkedin ,FaYoutube,FaYoutubeSquare} from "react-icons/fa";
+import { FaTelegram, FaWhatsapp, FaLinkedin,FaInstagram ,FaYoutube,FaYoutubeSquare} from "react-icons/fa";
 export default function Contact() {
   const [showEmail, setShowEmail] = useState(false);
 
@@ -103,6 +103,9 @@ export default function Contact() {
             </a>
             <a href={socialLinks[3].url} className="text-3xl" target="_blank">
               <FaLinkedin />
+            </a>
+            <a href={socialLinks[4].url} className="text-3xl" target="_blank">
+              <FaInstagram />
             </a>
               </div>
             </nav>
