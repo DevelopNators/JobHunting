@@ -1,5 +1,6 @@
 "use client";
 import { socialLinks } from "@/public/data";
+import { NextSeo } from "next-seo";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { FaTelegram, FaWhatsapp, FaLinkedin,FaInstagram ,FaYoutube,FaYoutubeSquare} from "react-icons/fa";
@@ -23,6 +24,7 @@ export default function Contact() {
         minHeight: "80vh",
       }}
     >
+
       <div
         className="mockup-phone"
         style={{
@@ -128,6 +130,70 @@ export default function Contact() {
         gtag('config', '${measurementId}');
     `}
 </Script>
+<NextSeo
+    title="contact Page"
+    description="Display all jobs here"
+    openGraph={{
+        title: 'Home Page',
+        description: 'contact from here',
+        images: [
+            {
+                url: 'https://jobhuntings.developnators.com/',
+                alt: 'contack  Image',
+            },
+        ],
+    }}
+    additionalMetaTags={[
+        {
+            name: 'keywords',
+            content: 'jobs, employment, career',
+        },
+        {
+            name: 'robots',
+            content: 'index,follow',
+        },
+        {
+            name: 'author',
+            content: 'Your Name or Company Name',
+        },
+        {
+            name: 'language',
+            content: 'English',
+        },
+        {
+            name: 'revisit-after',
+            content: '7 days',
+        },
+        {
+            name: 'rating',
+            content: 'general',
+        },
+        {
+            name: 'distribution',
+            content: 'global',
+        },
+        {
+            name: 'geo.region',
+            content: 'US-NY', 
+        },
+        {
+            name: 'geo.placename',
+            content: 'New York', 
+        },
+        {
+            name: 'geo.position',
+            content: '40.7128;-74.0060', 
+        },
+        {
+            name: 'ICBM',
+            content: '40.7128, -74.0060', 
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ]}
+/>
       
     </div>
 

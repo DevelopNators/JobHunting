@@ -13,6 +13,7 @@ import Designation from "@/app/components/jobcomponents/Designation";
 import HowToApply from "@/app/components/jobcomponents/HowtoApply";
 import ApplyLink from "@/app/components/jobcomponents/ApplyLink";
 import Script from "next/script";
+import { NextSeo } from "next-seo";
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   month: "short",
@@ -85,6 +86,7 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
 
   return (
     <div>
+
          <Script   strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></Script>
       <Script id="google-analytics" strategy="afterInteractive">
     {`
@@ -94,6 +96,70 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
         gtag('config', '${measurementId}');
     `}
 </Script>
+<NextSeo
+    title="Home Page"
+    description="Display all jobs here"
+    openGraph={{
+        title: 'single job Page',
+        description: 'Display all jobs here',
+        images: [
+            {
+                url: 'https://jobhuntings.developnators.com/',
+                alt: 'Homepage Image',
+            },
+        ],
+    }}
+    additionalMetaTags={[
+        {
+            name: 'keywords',
+            content: 'jobs, employment, career',
+        },
+        {
+            name: 'robots',
+            content: 'index,follow',
+        },
+        {
+            name: 'author',
+            content: 'Your Name or Company Name',
+        },
+        {
+            name: 'language',
+            content: 'English',
+        },
+        {
+            name: 'revisit-after',
+            content: '7 days',
+        },
+        {
+            name: 'rating',
+            content: 'general',
+        },
+        {
+            name: 'distribution',
+            content: 'global',
+        },
+        {
+            name: 'geo.region',
+            content: 'US-NY', 
+        },
+        {
+            name: 'geo.placename',
+            content: 'New York', 
+        },
+        {
+            name: 'geo.position',
+            content: '40.7128;-74.0060', 
+        },
+        {
+            name: 'ICBM',
+            content: '40.7128, -74.0060', 
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ]}
+/>
       {loading ? (
         <div
           style={{

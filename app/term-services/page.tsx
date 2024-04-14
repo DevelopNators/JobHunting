@@ -1,5 +1,6 @@
 import Script from "next/script";
 import Links from "../components/links/links";
+import { NextSeo } from "next-seo";
 
 const TermAndService = () => {
   let measurementId ='G-64SHT6GEGF'
@@ -16,6 +17,70 @@ const TermAndService = () => {
         gtag('config', '${measurementId}');
     `}
 </Script>
+<NextSeo
+    title="term-services Page"
+    description="Display all jobs here"
+    openGraph={{
+        title: 'term-services Pag',
+        description: 'term andd services',
+        images: [
+            {
+                url: 'https://jobhuntings.developnators.com/',
+                alt: 'term and  services',
+            },
+        ],
+    }}
+    additionalMetaTags={[
+        {
+            name: 'keywords',
+            content: 'jobs, employment, career',
+        },
+        {
+            name: 'robots',
+            content: 'index,follow',
+        },
+        {
+            name: 'author',
+            content: 'Your Name or Company Name',
+        },
+        {
+            name: 'language',
+            content: 'English',
+        },
+        {
+            name: 'revisit-after',
+            content: '7 days',
+        },
+        {
+            name: 'rating',
+            content: 'general',
+        },
+        {
+            name: 'distribution',
+            content: 'global',
+        },
+        {
+            name: 'geo.region',
+            content: 'US-NY', 
+        },
+        {
+            name: 'geo.placename',
+            content: 'New York', 
+        },
+        {
+            name: 'geo.position',
+            content: '40.7128;-74.0060', 
+        },
+        {
+            name: 'ICBM',
+            content: '40.7128, -74.0060', 
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ]}
+/>
 
       
       

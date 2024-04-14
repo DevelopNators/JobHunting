@@ -141,19 +141,19 @@ const HomePage = () => {
         },
         {
             name: 'geo.region',
-            content: 'US-NY', // Example: United States, New York
+            content: 'US-NY', 
         },
         {
             name: 'geo.placename',
-            content: 'New York', // Example: New York
+            content: 'New York', 
         },
         {
             name: 'geo.position',
-            content: '40.7128;-74.0060', // Example: Latitude and Longitude
+            content: '40.7128;-74.0060', 
         },
         {
             name: 'ICBM',
-            content: '40.7128, -74.0060', // Example: Latitude and Longitude
+            content: '40.7128, -74.0060', 
         },
         {
             name: 'og:type',
