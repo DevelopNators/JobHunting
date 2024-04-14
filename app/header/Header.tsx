@@ -50,15 +50,18 @@ const Header = () => {
   return (
     <header className="bg-white fixed w-full mb-10 z-50">
       <nav
-        className="mx-auto flex items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex items-center justify-between p-2 pt-3 pb-0 lg:px-8 "
         aria-label="Global"
+        style={{marginBottom:"-1em"}}
       >
         <div className="flex lg:flex-1">
           <span className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <Link href="/" className="link link-hover">
-              JOB HUNTING
-            </Link>
+            <div className="flex flex-col leading-3">
+              <Link href="/" className="link link-hover  text-2xl nothing-you">
+                JOB HUNTINGS
+              </Link>
+              <span className="text-md font-bold italic oswald ms-1">by DEVELOPNATORS</span>
+            </div>
           </span>
         </div>
 

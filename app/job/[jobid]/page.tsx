@@ -12,7 +12,11 @@ import SkillRequirement from "@/app/components/jobcomponents/SkillRequirement";
 import Designation from "@/app/components/jobcomponents/Designation";
 import HowToApply from "@/app/components/jobcomponents/HowtoApply";
 import ApplyLink from "@/app/components/jobcomponents/ApplyLink";
-
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+});
 const Jobs = ({ params }: { params: { jobid: string } }) => {
   const Jobid = params.jobid;
   const [singlejob, setSingleJob] = useState<any>(null);
@@ -105,23 +109,19 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
             style={{
               textAlign: "center",
               color: "red",
-              fontSize: "1.6rem",
+              fontSize: "1rem",
               position: "relative",
               top: "calc(100px)",
+              padding: "0rem 2rem",
               backgroundColor: "#F7F8F9",
             }}
           >
-            <a
-              target="_blank"
-              href="https://techfynder.com/Fresher-jobs-in-India"
-            >
-              <h1>
-                Top MNCs are Hiring{" "}
-                <b style={{ marginLeft: "20px" }}>
-                  find the Fresher job in India
-                </b>
-              </h1>
-            </a>
+            <h1 className="caveat">
+              🚀 Dive into a world of endless possibilities, where your skills
+              meet their perfect match.<br/> Start your journey today with
+              Jobhuntings and unlock a future filled with growth, success, and
+              fulfillment! Don't miss out—your dream job awaits!
+            </h1>
           </p>
           <Head>
             <title>Jobs Page</title>
@@ -147,11 +147,12 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
               className="container"
             >
               <h1>
-                <b>{singlejob?.organizationName}</b>
+                <b>{singlejob?.postTitle}</b>
               </h1>
-              <p className="mb-2">{singlejob?.aboutOrganization}</p>
+
               <p className="text-sm text-gray-500 mb-2">
-                Posted on April 7, 2024 by Admin
+                Posted on{" "}
+                {dateFormatter.format(new Date(singlejob.createdDate))} by Admin
               </p>
 
               <div className="flex flex-col md:flex-row items-center md:space-x-4">
@@ -202,6 +203,10 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
                 role={singlejob?.jobRole}
                 description={singlejob?.job_Description}
               />
+              <h1 className="my-3">
+                <b>ABOUT {singlejob?.organizationName}</b>
+              </h1>
+              <p className="mb-2">{singlejob?.aboutOrganization}</p>
               <HowToApply
                 appyInstructions={singlejob?.appyInstructions}
                 organizationName={singlejob?.organizationName}

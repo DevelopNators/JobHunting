@@ -10,6 +10,7 @@ const Designation : React.FC<Designation> = ({title,role, description}) =>{
     return (
         <>
           <PlaceHolder text={`${title} Careers – ${role}`} />
+          
         </>
     )
 }
