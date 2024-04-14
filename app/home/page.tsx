@@ -1,5 +1,3 @@
-
-'use client'
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Links from "../components/links/links";
@@ -9,22 +7,18 @@ import { useGlobalState } from '../context/GLobalContext';
 const HomePage = () => {
   
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10); 
+  const [pageSize, setPageSize] = useState(4); 
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [totalJobs, setTotalJobs] = useState(1);
   var catid:any =null
   try{
      var { catid } = useGlobalState();
-
   }
   catch(err){
      console.log("errr")
   }
   
-  
-
-
   const getAllJobs = async () => {
     try {
       const response = await fetch(
@@ -77,11 +71,19 @@ const HomePage = () => {
   }, [currentPage, pageSize, catid]);
   
   const handleNextPage = () => {
-    setCurrentPage(currentPage + 1);
+    if (currentPage < Math.ceil(totalJobs / pageSize)) {
+      setLoading(true)
+      setCurrentPage(currentPage + 1);
+      setLoading(false)
+    }
   };
 
   const handlePreviousPage = () => {
-    setCurrentPage(currentPage - 1);
+    if (currentPage > 1) {
+      setLoading(true)
+      setCurrentPage(currentPage - 1);
+      setLoading(false)
+    }
   };
 
   const handlePageSizeChange = (size:any) => {
@@ -156,8 +158,8 @@ const HomePage = () => {
                 style={{ backgroundColor: "grey", padding: "1rem" }}
                 className="card-actions mt-10"
               >
-                <span onClick={() => handlePreviousPage()}>prev</span>{" "}
-                <span onClick={() => handleNextPage()}>next</span>{" "}
+                <span onClick={() => handlePreviousPage()} className={currentPage === 1 ? 'disabled' : ''}>prev</span>{" "}
+                <span onClick={() => handleNextPage()} className={currentPage === totalPages ? 'disabled' : ''}>next</span>{" "}
                 <span>
                   Page {currentPage} of {totalPages}
                 </span>
