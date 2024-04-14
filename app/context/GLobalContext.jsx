@@ -55,7 +55,7 @@ const pathname = usePathname()
       }
     };
     getAllCategories();
-  }, []);
+  }, [catid]);
 
   
  

@@ -33,17 +33,17 @@ const Header = () => {
 
   const handleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-    setShowDropDown(false); // Close dropdown when opening mobile menu
+    setShowDropDown(false); 
   };
 
   return (
     <header className="bg-white fixed w-full mb-10 z-50">
       <nav className="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <span  className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Link href="/" className="link link-hover">JOB HUNTING</Link>
-          </a>
+          </span>
         </div>
 
         <div className="flex lg:hidden">
@@ -115,7 +115,7 @@ const Header = () => {
           <a target="_blank" href="https://www.foundit.in/seeker/registration?spl=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24&utm_source=Opicle&utm_medium=affiliate&utm_campaign=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24" className="text-sm font-semibold leading-6 text-gray-900">
             Work from Home
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900"></a>
+          
           <Link href="/" className="text-sm font-semibold leading-6 text-gray-900">Off campus Drive</Link>
         </Popover.Group>
 
