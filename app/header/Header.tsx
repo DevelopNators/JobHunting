@@ -36,12 +36,7 @@ const Header = () => {
   const handleModel = () =>{
       setShow(!show)
   }
-  const handleCategory = (e:any, id:any) => {
-    e.preventDefault();
-    dispatch({ type: 'CAT_ID', payload: id })
-    setCategoryId(id);
-    
-};
+  
   
 
   return (
@@ -172,10 +167,7 @@ const Header = () => {
                       as="a"
                       href={item.href}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      onClick={(e) => {
-                        setMobileMenuOpen(false);
-                        handleCategory(e, item.id);
-                      }}
+                      onClick={(e) =>   setCategoryId(item.id)}
                       
                      
 
