@@ -64,7 +64,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    if (catid!==7) {
+    if (catid) {
       getAllJobsbyCategoryId();
     } else {
       getAllJobs();
@@ -107,10 +107,7 @@ const HomePage = () => {
             width: "100%",
           }}
         >
-          <span
-            style={{ width: "60px" }}
-            className="loading loading-spinner loading-lg"
-          ></span>
+         
           <span
             style={{ width: "80px" }}
             className="loading loading-spinner loading-lg"

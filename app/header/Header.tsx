@@ -201,7 +201,7 @@ const Header = () => {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                        Product
+                        jobs
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
