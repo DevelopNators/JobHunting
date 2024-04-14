@@ -3,9 +3,9 @@ import Image from 'next/image';
 import  {data} from '../../data/data'
 export default function About() {
   return (
-    <div  className="about-page p-8" style={{color:'black'}} data-theme="light">
+    <div  className="about-page p-8 main-back " style={{color:'black',paddingTop: '6rem'}} data-theme="light">
 
-      <h1 className="text-4xl font-bold mb-4">Welcome to Our Company</h1>
+      <h1 className="text-4xl font-bold ">Passion meet success.</h1>
       <p className="text-lg mb-6 p-2">
         At Our Company, we're passionate about providing high-quality drinks
         and creating memorable experiences for our customers. Our mission is to

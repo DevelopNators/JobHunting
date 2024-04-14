@@ -161,7 +161,7 @@ const Header = () => {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
             target="_blank"
-            href="https://developnator.web.app"
+            href="https://developnators.com"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Internship <span aria-hidden="true">&rarr;</span>
@@ -251,7 +251,7 @@ const Header = () => {
               <div className="py-6">
                 <a
                   target="_blank"
-                  href="https://developnator.web.app/"
+                  href="https://developnators.com/"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >

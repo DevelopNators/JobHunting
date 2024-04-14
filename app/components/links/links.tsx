@@ -40,7 +40,7 @@ const Links = () => {
             <h1 style={{ fontWeight: "400" }}>Our Training Program</h1>
             <hr />
           </div>
-          <a target="_blank" href="https://developnator.web.app/">
+          <a target="_blank" href="https://developnators.com/">
             <img
               style={{
                 objectFit: "contain",

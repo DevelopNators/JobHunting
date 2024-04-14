@@ -104,7 +104,7 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
           ></span>
         </div>
       ) : (
-        <div style={{ backgroundColor: "#F7F8F9" }}>
+        <div className="main-back" >
           <p
             style={{
               textAlign: "center",
