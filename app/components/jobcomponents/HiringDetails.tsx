@@ -40,7 +40,7 @@ const HiringDetails: React.FC<jobSummary> = ( {role,Jobqualifications,experience
         </div>
         <div className="flex mb-4">
           <h3 className="text-base font-medium text-gray-800">Salary:</h3>
-          <p className="text-gray-700"> {salary && salary } </p>
+          <p className="text-gray-700">  ₹   {salary && salary } </p>
         </div>
         <div className="flex mb-4">
           <h3 className="text-base font-medium text-gray-800">Job Location:</h3>

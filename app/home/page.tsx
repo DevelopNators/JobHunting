@@ -113,7 +113,7 @@ const HomePage = () => {
     additionalMetaTags={[
         {
             name: 'keywords',
-            content: 'jobs, employment, career',
+            content: 'jobs, employment, career, job openings, job listings, job search, hiring, recruitment, job opportunities, job vacancies',
         },
         {
             name: 'robots',
