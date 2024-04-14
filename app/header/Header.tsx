@@ -1,12 +1,23 @@
-'use client'
-import { Fragment, useState } from 'react';
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import { ArrowPathIcon, Bars3Icon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon, XMarkIcon, ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { useGlobalState } from '../context/GLobalContext';
+"use client";
+import { Fragment, useState } from "react";
+import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import {
+  ArrowPathIcon,
+  Bars3Icon,
+  ChartPieIcon,
+  CursorArrowRaysIcon,
+  FingerPrintIcon,
+  SquaresPlusIcon,
+  XMarkIcon,
+  ChevronDownIcon,
+  PhoneIcon,
+  PlayCircleIcon,
+} from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { useGlobalState } from "../context/GLobalContext";
 import { VscFeedback } from "react-icons/vsc";
-import Model from '../components/Model/model';
-import { FaSlack } from 'react-icons/fa';
+import Model from "../components/Model/model";
+import { FaSlack } from "react-icons/fa";
 
 const products: any[] = [
   { icon: ChartPieIcon },
@@ -18,7 +29,7 @@ const products: any[] = [
 const callsToAction: any[] = [];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 const Header = () => {
@@ -33,16 +44,21 @@ const Header = () => {
 
   const handleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-    setShowDropDown(false); 
+    setShowDropDown(false);
   };
 
   return (
     <header className="bg-white fixed w-full mb-10 z-50">
-      <nav className="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="mx-auto flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1">
-          <span  className="-m-1.5 p-1.5">
+          <span className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <Link href="/" className="link link-hover">JOB HUNTING</Link>
+            <Link href="/" className="link link-hover">
+              JOB HUNTING
+            </Link>
           </span>
         </div>
 
@@ -60,11 +76,16 @@ const Header = () => {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button
-              onClick={() => {setShowDropDown(true),setShowDropDown(true) }}
+              onClick={() => {
+                setShowDropDown(true), setShowDropDown(true);
+              }}
               className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
             >
               Jobs
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
             </Popover.Button>
             {showDropDown && (
               <Transition
@@ -85,9 +106,12 @@ const Header = () => {
                       >
                         <div className="flex-auto">
                           <button
-                            onClick={(e) => { setCategoryId(item.id); setShowDropDown(false); }}
+                            onClick={(e) => {
+                              setCategoryId(item.id);
+                              setShowDropDown(false);
+                            }}
                             className="mt-1 text-gray-600"
-                            style={{ color: 'black' }}
+                            style={{ color: "black" }}
                           >
                             {item?.categoryName}
                           </button>
@@ -102,7 +126,10 @@ const Header = () => {
                         href={item.href}
                         className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                       >
-                        <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                        <item.icon
+                          className="h-5 w-5 flex-none text-gray-400"
+                          aria-hidden="true"
+                        />
                         {item.name}
                       </a>
                     ))}
@@ -112,24 +139,45 @@ const Header = () => {
             )}
           </Popover>
 
-          <a target="_blank" href="https://www.foundit.in/seeker/registration?spl=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24&utm_source=Opicle&utm_medium=affiliate&utm_campaign=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            target="_blank"
+            href="https://www.foundit.in/seeker/registration?spl=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24&utm_source=Opicle&utm_medium=affiliate&utm_campaign=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Work from Home
           </a>
-          
-          <Link href="/" className="text-sm font-semibold leading-6 text-gray-900">Off campus Drive</Link>
+
+          <Link
+            href="/"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Off campus Drive
+          </Link>
         </Popover.Group>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a target='_blank' href="https://developnator.web.app" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            target="_blank"
+            href="https://developnator.web.app"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Internship <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
 
-      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      <Dialog
+        as="div"
+        className="lg:hidden"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between" style={{ position: 'relative', marginTop: 'calc(120px)' }}>
+          <div
+            className="flex items-center justify-between"
+            style={{ position: "relative", marginTop: "calc(120px)" }}
+          >
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <h1 style={{ color: "green" }}>JOB HUNTING</h1>
@@ -152,7 +200,10 @@ const Header = () => {
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                         Product
                         <ChevronDownIcon
-                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          className={classNames(
+                            open ? "rotate-180" : "",
+                            "h-5 w-5 flex-none"
+                          )}
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
@@ -163,7 +214,11 @@ const Header = () => {
                             as="a"
                             href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                            onClick={(e) => { setCategoryId(item.id); setMobileMenuOpen(false); setShowDropDown(false); }}
+                            onClick={(e) => {
+                              setCategoryId(item.id);
+                              setMobileMenuOpen(false);
+                              setShowDropDown(false);
+                            }}
                           >
                             {item.categoryName}
                           </Disclosure.Button>
@@ -172,10 +227,23 @@ const Header = () => {
                     </>
                   )}
                 </Disclosure>
-                <a target="_blank" href="https://www.foundit.in/seeker/registration?spl=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24&utm_source=Opicle&utm_medium=affiliate&utm_campaign=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24" className="text-sm font-semibold leading-6 text-gray-900">
-                  <p style={{ marginBottom: '20px', marginTop: '20px' }}> Work from Home </p>
+                <a
+                  target="_blank"
+                  href="https://www.foundit.in/seeker/registration?spl=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24&utm_source=Opicle&utm_medium=affiliate&utm_campaign=IN_paid_display_direct_acq_affiliate_Opicle_AffID_SubID_Multiple_All_Apr_24"
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                >
+                  <p style={{ marginBottom: "20px", marginTop: "20px" }}>
+                    {" "}
+                    Work from Home{" "}
+                  </p>
                 </a>
-                <Link href="/" className="text-sm font-semibold leading-6 text-gray-900" onClick={() => setMobileMenuOpen(false)}>Off campus Drive</Link>
+                <Link
+                  href="/"
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Off campus Drive
+                </Link>
               </div>
               <div className="py-6">
                 <a
@@ -194,7 +262,11 @@ const Header = () => {
 
       {/* Feedback button */}
       <button type="button" onClick={handleModel}>
-        <div className="tooltip fixed bottom-24 right-8 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600" data-tip="Feedback" style={{ backgroundColor: 'none', border: 'none' }}>
+        <div
+          className="tooltip fixed bottom-24 right-8 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          data-tip="Feedback"
+          style={{ backgroundColor: "none", border: "none" }}
+        >
           <VscFeedback />
         </div>
       </button>
