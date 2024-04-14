@@ -105,10 +105,7 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
             width: "100%",
           }}
         >
-          <span
-            style={{ width: "60px" }}
-            className="loading loading-spinner loading-lg"
-          ></span>
+         
           <span
             style={{ width: "80px" }}
             className="loading loading-spinner loading-lg"
