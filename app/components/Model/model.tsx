@@ -15,40 +15,35 @@ const Model: React.FC<ModelProps> =   ({ show, setShowModel }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-   
-    // console.log('Email:', email);
-    // console.log('Name:', name);
-    // console.log('Feedback:', feedback);
-    
     handleClose();
   };
 
     const SubmitFeedback = async () => {
-      try {
-        const response = await fetch("https://developnators.azurewebsites.net/api/FeedBack/AddFeedBack",{
-          method:'POST',
-          
-            headers:{'Content-Type' : 'application/json'},
-            body: JSON.stringify({
-              email: email,
-              phone: '', 
-              topic: name,
-              message: feedback,
-              feedbackFromUrl: 0, 
-              type: 'Feedback' 
-            })
-        });
-       
-        if (response.ok) {
-          
+      if(email && name && feedback) {
+        try {
+          const response = await fetch("https://developnators.azurewebsites.net/api/FeedBack/AddFeedBack",{
+            method:'POST',
+            
+              headers:{'Content-Type' : 'application/json'},
+              body: JSON.stringify({
+                email: email,
+                phone: '', 
+                topic: name,
+                message: feedback,
+                feedbackFromUrl: 0, 
+                type: 'Feedback' 
+              })
+          });
          
-          toast.success('Feedback submitted successfully!');
-        } else {
-          toast.warn('Failed to sumbit Feedback');
+          if (response.ok) {
+            toast.success('Feedback submitted successfully!');
+          } else {
+            toast.warn('Failed to sumbit Feedback');
+          }
+          
+        } catch (error) {
+          console.error('Error fetching data:', error);
         }
-        
-      } catch (error) {
-        console.error('Error fetching data:', error);
       }
     };
   
