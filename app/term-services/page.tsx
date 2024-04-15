@@ -17,70 +17,7 @@ const TermAndService = () => {
         gtag('config', '${measurementId}');
     `}
 </Script>
-<NextSeo
-    title="term-services Page"
-    description="Display all jobs here"
-    openGraph={{
-        title: 'term-services Pag',
-        description: 'term andd services',
-        images: [
-            {
-                url: 'https://jobhuntings.developnators.com/term-services',
-                alt: 'term and  services',
-            },
-        ],
-    }}
-    additionalMetaTags={[
-        {
-            name: 'keywords',
-            content: 'jobs, employment, career, job openings, job listings, job search, hiring, recruitment, job opportunities, job vacancies',
-        },
-        {
-            name: 'robots',
-            content: 'index,follow',
-        },
-        {
-            name: 'author',
-            content: 'Your Name or Company Name',
-        },
-        {
-            name: 'language',
-            content: 'English',
-        },
-        {
-            name: 'revisit-after',
-            content: '7 days',
-        },
-        {
-            name: 'rating',
-            content: 'general',
-        },
-        {
-            name: 'distribution',
-            content: 'global',
-        },
-        {
-            name: 'geo.region',
-            content: 'US-NY', 
-        },
-        {
-            name: 'geo.placename',
-            content: 'New York', 
-        },
-        {
-            name: 'geo.position',
-            content: '40.7128;-74.0060', 
-        },
-        {
-            name: 'ICBM',
-            content: '40.7128, -74.0060', 
-        },
-        {
-            name: 'og:type',
-            content: 'website',
-        },
-    ]}
-/>
+
 
       
       
@@ -140,3 +77,9 @@ const TermAndService = () => {
   );
 };
 export default TermAndService;
+
+export function generateMetadata(){
+  return{
+   title : 'Term-services page'
+  }
+}

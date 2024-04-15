@@ -120,82 +120,16 @@ export default function Contact() {
       </div>
 
      
-  
-      <Script   strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></Script>
-      <Script id="google-analytics" strategy="afterInteractive">
-    {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${measurementId}');
-    `}
-</Script>
-<NextSeo
-    title="contact Page"
-    description="Display all jobs here"
-    openGraph={{
-        title: 'Home Page',
-        description: 'contact from here',
-        images: [
-            {
-                url: 'https://jobhuntings.developnators.com/contack',
-                alt: 'contact  page',
-            },
-        ],
-    }}
-    additionalMetaTags={[
-        {
-            name: 'keywords',
-            content: 'jobs, employment, career, job openings, job listings, job search, hiring, recruitment, job opportunities, job vacancies',
-        },
-        {
-            name: 'robots',
-            content: 'index,follow',
-        },
-        {
-            name: 'author',
-            content: 'Your Name or Company Name',
-        },
-        {
-            name: 'language',
-            content: 'English',
-        },
-        {
-            name: 'revisit-after',
-            content: '7 days',
-        },
-        {
-            name: 'rating',
-            content: 'general',
-        },
-        {
-            name: 'distribution',
-            content: 'global',
-        },
-        {
-            name: 'geo.region',
-            content: 'US-NY', 
-        },
-        {
-            name: 'geo.placename',
-            content: 'New York', 
-        },
-        {
-            name: 'geo.position',
-            content: '40.7128;-74.0060', 
-        },
-        {
-            name: 'ICBM',
-            content: '40.7128, -74.0060', 
-        },
-        {
-            name: 'og:type',
-            content: 'website',
-        },
-    ]}
-/>
+
+
       
     </div>
 
   );
+}
+
+  function generateMetadata(): { title: string; }{
+  return{
+   title : 'contact page'
+  }
 }

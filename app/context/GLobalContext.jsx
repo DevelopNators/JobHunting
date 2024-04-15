@@ -37,6 +37,7 @@ export const GlobalStateProvider = ({ children }) => {
 
   const setCategoryId = (id) => {
     setCatId(id);
+    // console.log("id", id)
     if (pathname !== "/") {
       router.push("/");
     }

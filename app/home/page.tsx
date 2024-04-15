@@ -17,8 +17,10 @@ const HomePage = () => {
   const [jobs, setJobs] = useState([]);
   const [totalJobs, setTotalJobs] = useState(1);
   var catid: any = null;
+  
   try {
     var { catid } = useGlobalState();
+   
   } catch (err) {
     console.log("errr");
   }
@@ -97,71 +99,7 @@ const HomePage = () => {
 
   return (
     <div style={{ backgroundColor: "#F7F8F9" }}>
-      <NextSeo
-    title="Home Page"
-    description="Display all jobs here"
-    openGraph={{
-        title: 'Home Page',
-        description: 'Display all jobs here',
-        images: [
-            {
-                url: 'https://jobhuntings.developnators.com/',
-                alt: 'Homepage Image',
-            },
-        ],
-    }}
-    additionalMetaTags={[
-        {
-            name: 'keywords',
-            content: 'jobs, employment, career, job openings, job listings, job search, hiring, recruitment, job opportunities, job vacancies',
-        },
-        {
-            name: 'robots',
-            content: 'index,follow',
-        },
-        {
-            name: 'author',
-            content: 'Your Name or Company Name',
-        },
-        {
-            name: 'language',
-            content: 'English',
-        },
-        {
-            name: 'revisit-after',
-            content: '7 days',
-        },
-        {
-            name: 'rating',
-            content: 'general',
-        },
-        {
-            name: 'distribution',
-            content: 'global',
-        },
-        {
-            name: 'geo.region',
-            content: 'US-NY', 
-        },
-        {
-            name: 'geo.placename',
-            content: 'New York', 
-        },
-        {
-            name: 'geo.position',
-            content: '40.7128;-74.0060', 
-        },
-        {
-            name: 'ICBM',
-            content: '40.7128, -74.0060', 
-        },
-        {
-            name: 'og:type',
-            content: 'website',
-        },
-    ]}
-/>
-
+     
 
 
       {loading ? (
@@ -280,3 +218,10 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+ function generateMetadata(){
+  return{
+   title : 'Home page'
+  }
+}

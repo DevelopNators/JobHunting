@@ -316,3 +316,10 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
 };
 
 export default Jobs;
+
+
+ function generateMetadata(){
+  return{
+   title : 'job page'
+  }
+}

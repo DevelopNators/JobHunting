@@ -15,70 +15,7 @@ const PrivacyPolicy = () => {
         gtag('config', '${measurementId}');
     `}
 </Script>
-<NextSeo
-    title="privacy   Page"
-    description="Display all jobs here"
-    openGraph={{
-        title: 'privacy  Page',
-        description: 'our privacy policy',
-        images: [
-            {
-                url: 'https://jobhuntings.developnators.com/privacy-policy',
-                alt: 'privacy policy',
-            },
-        ],
-    }}
-    additionalMetaTags={[
-        {
-            name: 'keywords',
-            content: 'jobs, employment, career',
-        },
-        {
-            name: 'robots',
-            content: 'index,follow',
-        },
-        {
-            name: 'author',
-            content: 'Your Name or Company Name',
-        },
-        {
-            name: 'language',
-            content: 'English',
-        },
-        {
-            name: 'revisit-after',
-            content: '7 days',
-        },
-        {
-            name: 'rating',
-            content: 'general',
-        },
-        {
-            name: 'distribution',
-            content: 'global',
-        },
-        {
-            name: 'geo.region',
-            content: 'US-NY', 
-        },
-        {
-            name: 'geo.placename',
-            content: 'New York', 
-        },
-        {
-            name: 'geo.position',
-            content: '40.7128;-74.0060', 
-        },
-        {
-            name: 'ICBM',
-            content: '40.7128, -74.0060', 
-        },
-        {
-            name: 'og:type',
-            content: 'website',
-        },
-    ]}
-/>
+
       <div className="term-container">
         <div
           className="term-services mt-6"
@@ -247,3 +184,10 @@ const PrivacyPolicy = () => {
   );
 };
 export default PrivacyPolicy;
+
+
+export function generateMetadata(){
+  return{
+   title : 'Privacy Policy page'
+  }
+}

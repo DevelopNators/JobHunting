@@ -5,70 +5,7 @@ import { NextSeo } from 'next-seo';
 export default function About() {
   return (
     <div  className="about-page p-8 main-back " style={{color:'black',paddingTop: '6rem'}} data-theme="light">
-       <NextSeo
-    title="About Page"
-    description="Display all jobs here"
-    openGraph={{
-        title: 'About  Page',
-        description: 'About Us',
-        images: [
-            {
-                url: 'https://jobhuntings.developnators.com/about',
-                alt: 'about page',
-            },
-        ],
-    }}
-    additionalMetaTags={[
-        {
-            name: 'keywords',
-            content: 'jobs, employment, career, job openings, job listings, job search, hiring, recruitment, job opportunities, job vacancies',
-        },
-        {
-            name: 'robots',
-            content: 'index,follow',
-        },
-        {
-            name: 'author',
-            content: 'Your Name or Company Name',
-        },
-        {
-            name: 'language',
-            content: 'English',
-        },
-        {
-            name: 'revisit-after',
-            content: '7 days',
-        },
-        {
-            name: 'rating',
-            content: 'general',
-        },
-        {
-            name: 'distribution',
-            content: 'global',
-        },
-        {
-            name: 'geo.region',
-            content: 'US-NY', 
-        },
-        {
-            name: 'geo.placename',
-            content: 'New York', 
-        },
-        {
-            name: 'geo.position',
-            content: '40.7128;-74.0060', 
-        },
-        {
-            name: 'ICBM',
-            content: '40.7128, -74.0060', 
-        },
-        {
-            name: 'og:type',
-            content: 'website',
-        },
-    ]}
-/>
+ 
 
       <h1 className="text-4xl font-bold ">Passion meet success.</h1>
       <p className="text-lg mb-6 p-2">
@@ -110,4 +47,11 @@ export default function About() {
       </div>
     </div>
   );
+}
+
+
+export function generateMetadata(){
+      return{
+       title : 'About page'
+      }
 }
