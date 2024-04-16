@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   description: "Stay ahead in your job hunt with our daily updates on the latest job openings, training opportunities, and internships. We provide timely information to help you navigate the dynamic landscape of career opportunities.",
   icons: "../public/favicon.ico",
   applicationName: "Job Huntings",
-  keywords: ['job hunting', 'job openings', 'internships', 'training', 'careers'], 
+  keywords: ['job hunting, job search, jobs, careers, employment, openings, vacancies, internships, apprenticeships, training, professional development, career advice, career planning, resume writing, interview tips, job applications, cover letters, salary negotiation, networking, job boards, employer branding, talent acquisition'], 
   openGraph: {
     title: 'Job Huntings | Find Your Dream Job', 
     description: 'Your one-stop shop for job hunting resources.',
     url: 'https://jobhuntings.developnators.com/',
     images: [ 
       {
-        url: 'https://jobhuntings.developnators.com/', // Image URL
+        url: 'https://jobhuntings.developnators.com/', 
         width: 800,
         height: 600, 
       },

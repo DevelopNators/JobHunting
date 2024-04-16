@@ -101,6 +101,13 @@ const HomePage = () => {
     <div style={{ backgroundColor: "#F7F8F9" }}>
      
 
+     <head>
+      <title>JobHuntings:Home</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="JobHuntings is your one-stop platform for finding exciting job opportunities. Search for jobs, post resumes, and connect with employers – all in one convenient location." />
+      <meta name="keywords" content="job hunting, job search, jobs, careers, employment, naukri, indeed, monster, job posting, resume building, career advice" />
+    </head>
 
       {loading ? (
         <div
@@ -220,8 +227,3 @@ const HomePage = () => {
 export default HomePage;
 
 
- function generateMetadata(){
-  return{
-   title : 'Home page'
-  }
-}
