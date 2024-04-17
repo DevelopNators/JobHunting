@@ -12,7 +12,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 });
 const HomePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(4);
+  const [pageSize, setPageSize] = useState(10);
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [totalJobs, setTotalJobs] = useState(1);
