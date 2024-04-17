@@ -8,6 +8,8 @@ interface seoIn{
 }
 
 const Seo :React.FC<seoIn> = ({ title , description }) => {
+
+  console.log("ADS")
   return (
     <Head>
       <title>{title}</title>

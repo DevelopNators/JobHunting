@@ -18,7 +18,7 @@ export const socialLinks = [
   },
   {
     name: "WhatsApp",
-    url: "https://chat.whatsapp.com/B9CPqLz6lQF5jMPUSLxw9I",
+    url: "https://chat.whatsapp.com/FuwWDwQnwjR10iWXWoWs5S",
   },
   {
     name: "Telegram",
