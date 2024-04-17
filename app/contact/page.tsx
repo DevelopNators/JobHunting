@@ -4,6 +4,8 @@ import { NextSeo } from "next-seo";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { FaTelegram, FaWhatsapp, FaLinkedin,FaInstagram ,FaYoutube,FaYoutubeSquare} from "react-icons/fa";
+import Seo from "../Seo/page";
+
 export default function Contact() {
   const [showEmail, setShowEmail] = useState(false);
   let measurementId ='G-64SHT6GEGF'
@@ -25,13 +27,8 @@ export default function Contact() {
         minHeight: "80vh",
       }}
     >
-      <head>
-      <title>JobHuntings:Contact</title>
-
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="JobHuntings is your one-stop platform for finding exciting job opportunities. Search for jobs, post resumes, and connect with employers – all in one convenient location." />
-      <meta name="keywords" content="job hunting, job search, jobs, careers, employment, naukri, indeed, monster, job posting, resume building, career advice" />
-    </head>
+    
+    <Seo title = 'JobHuntings:Contact'  description= "JobHuntings is your one-stop platform for finding exciting job opportunities. Search for jobs, post resumes, and connect with employers – all in one convenient location."/> 
 
       <div
         className="mockup-phone"
