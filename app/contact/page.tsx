@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { FaTelegram, FaWhatsapp, FaLinkedin,FaInstagram ,FaYoutube,FaYoutubeSquare} from "react-icons/fa";
-import Seo from "../Seo/page";
+// import Seo from "../Seo/page";
 
 export default function Contact() {
   const [showEmail, setShowEmail] = useState(false);
@@ -28,7 +28,7 @@ export default function Contact() {
       }}
     >
     
-    <Seo title = 'JobHuntings:Contact'  description= "JobHuntings is your one-stop platform for finding exciting job opportunities. Search for jobs, post resumes, and connect with employers – all in one convenient location."/> 
+    {/* <Seo title = 'JobHuntings:Contact'  description= "JobHuntings is your one-stop platform for finding exciting job opportunities. Search for jobs, post resumes, and connect with employers – all in one convenient location."/>  */}
 
       <div
         className="mockup-phone"
