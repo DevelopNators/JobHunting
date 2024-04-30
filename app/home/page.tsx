@@ -153,7 +153,7 @@ const HomePage = () => {
                   return (
                     <div
                     key={data.id}
-                    className="card card-side bg-base-100 shadow-x mt-10 flex items-center"
+                    className="card card-side bg-base-100 shadow-x mt-5 flex items-center"
                     style={{ boxShadow: "0px 0px 20px 0px #ff7f7f42" }}
                     data-theme="light"
                   >
