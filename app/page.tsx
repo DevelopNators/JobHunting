@@ -7,17 +7,24 @@ import HomePage from "./home/page";
 import { GlobalStateProvider } from "./context/GLobalContext";
 import Script from "next/script";
 
+
 export default function Home() {
   let measurementId = "G-64SHT6GEGF";
 
   return (
     <main style={{ backgroundColor: "#F7F8F9" }}>
+
+
+      
+      
       <HomePage />
 
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
       ></Script>
+
+         
       <Script id="google-analytics" strategy="afterInteractive">
         {`
         window.dataLayer = window.dataLayer || [];
@@ -26,6 +33,7 @@ export default function Home() {
         gtag('config', '${measurementId}');
     `}
       </Script>
+   
     </main>
   );
 }

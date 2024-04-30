@@ -26,7 +26,12 @@ export default function Contact() {
         minHeight: "80vh",
       }}
     >
-       <script type="text/javascript" src="https://ap.lijit.com/www/delivery/fpi.js?z=1234641&width=120&height=600"></script>
+  
+     
+
+
+  {/* <script type="text/javascript" src="https://ap.lijit.com/www/delivery/fpi.js?z=1234641&width=120&height=600"></script> */}
+
       <div
         className="mockup-phone"
         style={{

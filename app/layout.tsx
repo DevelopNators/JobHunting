@@ -7,6 +7,7 @@ import Footer from "./footer/Footer";
 import { GlobalStateProvider } from './context/GLobalContext';
 import HomePage from "./home/page";
 import Script from "next/script";
+
 const inter = Inter({ subsets: ["latin"] });
 let measurementId ='G-64SHT6GEGF'
 export const metadata: Metadata = {
@@ -38,10 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <head>
-     
-      </head>
-       
+
       <GlobalStateProvider>
       <body className={inter.className}>
      
@@ -59,6 +57,11 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
         gtag('config', '${measurementId}');
     `}
 </Script>
+
+<Script
+          src="//ap.lijit.com/www/delivery/fpi.js?z=1234641&width=120&height=600"
+          type="text/javascript"
+        ></Script>
     </html>
   );
 }
