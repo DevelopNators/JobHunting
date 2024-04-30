@@ -163,7 +163,7 @@ const Header = () => {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
             target="_blank"
-            href="https://developnators.com/trainings"
+            href="https://developnators.com/skillup"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Internship <span aria-hidden="true">&rarr;</span>
