@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: "Stay ahead in your job hunt with our daily updates on the latest job openings, training opportunities, and internships. We provide timely information to help you navigate the dynamic landscape of career opportunities.",
   icons: "../public/favicon.ico",
   applicationName: "Job Huntings",
-  keywords: ['job hunting, job search, jobs, careers, employment, openings, vacancies, internships, apprenticeships, training, professional development, career advice, career planning, resume writing, interview tips, job applications, cover letters, salary negotiation, networking, job boards, employer branding, talent acquisition'], 
+  keywords: ['job hunting, job huntings, job hunting, jobhunting, job search, jobs, careers, employment, openings, vacancies, internships, apprenticeships, training, professional development, career advice, career planning, resume writing, interview tips, job applications, cover letters, salary negotiation, networking, job boards, employer branding, talent acquisition'], 
   openGraph: {
     title: 'Job Huntings | Find Your Dream Job', 
     description: 'Your one-stop shop for job hunting resources.',
@@ -58,7 +58,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
     `}
 </Script>
 
-<Script
+        <Script
           src="//ap.lijit.com/www/delivery/fpi.js?z=1234641&width=120&height=600"
           type="text/javascript"
         ></Script>
