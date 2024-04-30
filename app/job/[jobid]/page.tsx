@@ -13,7 +13,6 @@ import Designation from "@/app/components/jobcomponents/Designation";
 import HowToApply from "@/app/components/jobcomponents/HowtoApply";
 import ApplyLink from "@/app/components/jobcomponents/ApplyLink";
 import Script from "next/script";
-import { NextSeo } from "next-seo";
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   month: "short",
@@ -82,31 +81,36 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
       window.removeEventListener("resize", checkWindowWidth);
     };
   }, []);
-  let measurementId ='G-64SHT6GEGF'
+  let measurementId = "G-64SHT6GEGF";
 
   return (
     <div>
+      <head>
+        <title>JobHuntings:SingleJob</title>
 
-<head>
-      <title>JobHuntings:SingleJob</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="JobHuntings is your one-stop platform for finding exciting job opportunities. Search for jobs, post resumes, and connect with employers – all in one convenient location."
+        />
+        <meta
+          name="keywords"
+          content="job hunting, job search, jobs, careers, employment, naukri, indeed, monster, job posting, resume building, career advice"
+        />
+      </head>
 
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="JobHuntings is your one-stop platform for finding exciting job opportunities. Search for jobs, post resumes, and connect with employers – all in one convenient location." />
-      <meta name="keywords" content="job hunting, job search, jobs, careers, employment, naukri, indeed, monster, job posting, resume building, career advice" />
-    </head>
-
-
-         <Script   strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></Script>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+      ></Script>
       <Script id="google-analytics" strategy="afterInteractive">
-    {`
+        {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', '${measurementId}');
     `}
-</Script>
-
-
+      </Script>
 
       {loading ? (
         <div
@@ -117,18 +121,17 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
             alignItems: "center",
             height: "100vh",
             width: "100%",
+            backgroundColor: "#F7F8F9",
+
           }}
         >
-
-
-         
           <span
             style={{ width: "80px" }}
             className="loading loading-spinner loading-lg"
           ></span>
         </div>
       ) : (
-        <div className="main-back" >
+        <div  >
           <p
             style={{
               textAlign: "center",
@@ -140,11 +143,12 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
               backgroundColor: "#F7F8F9",
             }}
           >
-            <h1 className="caveat">
+            <h1 className="lato-bold">
               🚀 Dive into a world of endless possibilities, where your skills
-              meet their perfect match.<br/> Start your journey today with
-              Jobhuntings and unlock a future filled with growth, success, and
-              fulfillment! Don't miss out—your dream job awaits!
+              meet their perfect match.
+              <br /> Start your journey today with Jobhuntings and unlock a
+              future filled with growth, success, and fulfillment! Don't miss
+              out—your dream job awaits!
             </h1>
           </p>
           <Head>
@@ -256,18 +260,14 @@ const Jobs = ({ params }: { params: { jobid: string } }) => {
           `}</style>
         </div>
       )}
-      
-   
-      
     </div>
   );
 };
 
 export default Jobs;
 
-
- function generateMetadata(){
-  return{
-   title : 'job page'
-  }
+function generateMetadata() {
+  return {
+    title: "job page",
+  };
 }

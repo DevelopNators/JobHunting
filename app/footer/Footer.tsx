@@ -1,8 +1,9 @@
 import { socialLinks } from "@/public/data";
+import Image from "next/image";
 import Link from "next/link";
 import { FaTelegram, FaWhatsapp, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
-
+import logo from '../../public/jhlogo.png'
 const Footer = () => {
   return (
     <div style={{ position: "relative", backgroundColor: "#F7F8F9" }}>
@@ -10,6 +11,9 @@ const Footer = () => {
         className="footer footer-center p-10 bg-base-200 text-base-content rounded footer-postion "
         data-theme="light"
       >
+        <div className="" style={{width:"15rem"}}>
+          <Image src={logo} alt={"logo"}/>
+        </div>
         <nav className="grid grid-flow-col gap-4">
           <Link href="/about" className="link link-hover">
             About us

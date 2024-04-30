@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import DevelopNators from "../../../public/developnators1.png"; // Correct image import path
-
+import Image from 'next/image';
+import skillup from '../../../public/skillup.png'
 const Links = () => {
   const [links, setLinks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,8 +32,8 @@ const Links = () => {
         <div
           className="card-data-10"
           style={{
-            backgroundColor: "black",
-            color: "white",
+            backgroundColor: "white",
+            color: "black",
             textAlign: "center",
           }}
         >
@@ -41,17 +42,18 @@ const Links = () => {
             <hr />
           </div>
           <a target="_blank" href="https://developnators.com/">
-            <img
+            <Image
               style={{
                 objectFit: "contain",
                 width: "100%",
-                height: "100%",
+                height: "65%",
                 display: "block",
                 margin: "0 auto",
               }}
-              src={DevelopNators.src}
+              src={skillup}
               alt="DevelopNators"
             />
+            <span className="text-md font-bold italic oswald mb-1">by DEVELOPNATORS</span>
           </a>
         </div>
 
@@ -86,13 +88,13 @@ const Links = () => {
                 <div
                   style={{
                     display: "flex",
-                    marginBottom: "2rem",
+                    marginBottom: "0rem",
                     height: "auto",
                   }}
                   key={index}
                 >
                   <a
-                    style={{ padding: "2rem", flex: "1" }}
+                    style={{ padding: "1rem", flex: "1" }}
                     className="mt-0"
                     href={res.appyLink}
                   >

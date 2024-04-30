@@ -5,6 +5,7 @@ import Links from "../components/links/links";
 import Link from "next/link";
 import { useGlobalState } from "../context/GLobalContext";
 import { NextSeo } from 'next-seo';
+import { ErrorImg } from "../utils/ErrorImage";
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   month: "short",
@@ -137,10 +138,10 @@ const HomePage = () => {
               top: "calc(100px + 2rem)",
             }}
           >
-            <h5 className="caveat">
+            <h5 className="jersey">
               Exciting Opportunities Await! Top Multinational Companies are on
               the lookout for fresh talent in India,
-              <br /> and Jobhuntings is your gateway to these thrilling career
+              <br /> and Job Huntings is your gateway to these thrilling career
               prospects!
             </h5>
           </p>
@@ -151,44 +152,45 @@ const HomePage = () => {
                 jobs.map((data: any) => {
                   return (
                     <div
-                      key={data.id}
-                      className="card card-side bg-base-100 shadow-x mt-10"
-                      style={{ boxShadow: "0px 0px 20px 0px #ff7f7f42" }}
-                      data-theme="light"
-                    >
-                      <figure>
-                        <img
-                          src={data.cardPhoto}
-                          alt="Movie"
-                          style={{
-                            height: "auto",
-                            maxHeight: "100%",
-                            objectFit: "fill",
-                          }}
-                        />
-                      </figure>
-                      <div className="card-body">
-                        <h2 className="card-title"> {data.postTitle} </h2>
-                        <p className="text-sm">
-                          {" "}
-                          {dateFormatter.format(new Date(data.createdDate))}
-                        </p>
-                        <p> {data.qualification} </p>
-                        <p>
-                          <b>{data.salary}</b>
-                        </p>
-                        <div className="card-actions justify-end">
-                          <Link href={`/job/${data.jobId}`}>
-                            <button
-                              type="button"
-                              className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                            >
-                              Find More
-                            </button>
-                          </Link>
-                        </div>
+                    key={data.id}
+                    className="card card-side bg-base-100 shadow-x mt-10 flex items-center"
+                    style={{ boxShadow: "0px 0px 20px 0px #ff7f7f42" }}
+                    data-theme="light"
+                  >
+                    <figure style={{ flex: "40%" }}>
+                      <img
+                        src={data.cardPhoto}
+                        alt="Movie"
+                        style={{
+                          height: "auto",
+                          maxHeight: "100%",
+                          objectFit: "fill",
+                        }}
+                        onError={ErrorImg}
+                      />
+                    </figure>
+                    <div className="card-body" style={{ flex: "60%" }}>
+                      <h2 className="card-title">{data.postTitle}</h2>
+                      <p className="text-sm">
+                        {dateFormatter.format(new Date(data.createdDate))}
+                      </p>
+                      <p>{data.qualification}</p>
+                      <p>
+                        <b>{data.salary}</b>
+                      </p>
+                      <div className="card-actions justify-end">
+                        <Link href={`/job/${data.jobId}`}>
+                          <button
+                            type="button"
+                            className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                          >
+                            Find More
+                          </button>
+                        </Link>
                       </div>
                     </div>
+                  </div>
+                  
                   );
                 })}
               <div

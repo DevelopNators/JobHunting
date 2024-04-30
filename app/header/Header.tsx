@@ -13,12 +13,13 @@ import {
   PhoneIcon,
   PlayCircleIcon,
 } from "@heroicons/react/24/outline";
+import Image from 'next/image';
 import Link from "next/link";
 import { useGlobalState } from "../context/GLobalContext";
 import { VscFeedback } from "react-icons/vsc";
 import Model from "../components/Model/model";
 import { FaSlack } from "react-icons/fa";
-
+import logo from "../../public/jhlogo.png";
 const products: any[] = [
   { icon: ChartPieIcon },
   { icon: CursorArrowRaysIcon },
@@ -52,15 +53,16 @@ const Header = () => {
       <nav
         className="mx-auto flex items-center justify-between p-2 pt-3 pb-0 lg:px-8 "
         aria-label="Global"
-        style={{marginBottom:"-1em"}}
+        style={{ marginBottom: "-1em" }}
       >
         <div className="flex lg:flex-1">
           <span className="-m-1.5 p-1.5">
             <div className="flex flex-col leading-3">
               <Link href="/" className="link link-hover  text-2xl nothing-you">
-                JOB HUNTINGS
+                              <Image src={logo} alt="Job Huntings" style={{width:"15rem"}} />
+
               </Link>
-              <span className="text-md font-bold italic oswald ms-1">by DEVELOPNATORS</span>
+              {/* <span className="text-md font-bold italic oswald ms-1">by DEVELOPNATORS</span> */}
             </div>
           </span>
         </div>
