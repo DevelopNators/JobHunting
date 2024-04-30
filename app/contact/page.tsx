@@ -1,14 +1,13 @@
 "use client";
 import { socialLinks } from "@/public/data";
 import { NextSeo } from "next-seo";
+import { Head } from "next/document";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { FaTelegram, FaWhatsapp, FaLinkedin,FaInstagram ,FaYoutube,FaYoutubeSquare} from "react-icons/fa";
-// import Seo from "../Seo/page";
 
 export default function Contact() {
   const [showEmail, setShowEmail] = useState(false);
-  let measurementId ='G-64SHT6GEGF'
   useEffect(() => {
     setTimeout(() => {
       setShowEmail(true);
@@ -27,9 +26,7 @@ export default function Contact() {
         minHeight: "80vh",
       }}
     >
-    
-    {/* <Seo title = 'JobHuntings:Contact'  description= "JobHuntings is your one-stop platform for finding exciting job opportunities. Search for jobs, post resumes, and connect with employers – all in one convenient location."/>  */}
-
+       <script type="text/javascript" src="https://ap.lijit.com/www/delivery/fpi.js?z=1234641&width=120&height=600"></script>
       <div
         className="mockup-phone"
         style={{
