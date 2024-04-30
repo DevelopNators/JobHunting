@@ -16,7 +16,7 @@ interface jobSummary {
 
 const HiringDetails: React.FC<jobSummary> = ( {role,Jobqualifications,experience,batch,salary,lastDate,location,telegramLink,organizationName} ) => {
   return (
-    <div className="bg-white shadow-md rounded overflow-hidden">
+    <div className="bg-white shadow-md rounded overflow-hidden mt-2">
 
 
       <PlaceHolder text = {`${organizationName} ${batch} Details :`}/>
